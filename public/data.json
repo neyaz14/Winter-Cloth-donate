@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Warm Clothes for Rural Families",
+    "image": "https://example.com/images/rural-families.jpg",
+    "description": "Help rural families in the Rajshahi division stay warm this winter by donating coats, sweaters, and blankets.",
+    "status": "Active",
+    "contactInfo": "contact@donatewarmth.com",
+    "division": "Rajshahi"
+  },
+  {
+    "id": 2,
+    "title": "Winter Aid for Low-Income Communities",
+    "image": "https://example.com/images/low-income-communities.jpg",
+    "description": "Support low-income families in the Dhaka division by providing essential winter clothing.",
+    "status": "Active",
+    "contactInfo": "dhaka.help@donatewarmth.com",
+    "division": "Dhaka"
+  },
+  {
+    "id": 3,
+    "title": "Blanket Drive for Sylhet Villages",
+    "image": "https://example.com/images/sylhet-blankets.jpg",
+    "description": "Donate blankets and sweaters to remote villages in the Sylhet division.",
+    "status": "Completed",
+    "contactInfo": "sylhet.outreach@donatewarmth.com",
+    "division": "Sylhet"
+  },
+  {
+    "id": 4,
+    "title": "Coat Collection for Chattogram Hills",
+    "image": "https://example.com/images/chattogram-coats.jpg",
+    "description": "Provide warmth to the communities in the Chattogram Hill Tracts by donating winter coats.",
+    "status": "Active",
+    "contactInfo": "chattogram.support@donatewarmth.com",
+    "division": "Chattogram"
+  },
+  {
+    "id": 5,
+    "title": "Helping the Elderly in Rangpur",
+    "image": "https://example.com/images/rangpur-elderly.jpg",
+    "description": "Join us in providing winter clothing to elderly individuals in the Rangpur division.",
+    "status": "Pending",
+    "contactInfo": "rangpur.aid@donatewarmth.com",
+    "division": "Rangpur"
+  },
+  {
+    "id": 6,
+    "title": "Sweater Campaign for Barishal Fishermen",
+    "image": "https://example.com/images/barishal-fishermen.jpg",
+    "description": "Support the fishermen in Barishal with warm sweaters and jackets during the winter season.",
+    "status": "Active",
+    "contactInfo": "barishal.reachout@donatewarmth.com",
+    "division": "Barishal"
+  }
+]
