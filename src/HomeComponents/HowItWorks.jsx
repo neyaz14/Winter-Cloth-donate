@@ -12,8 +12,8 @@ const HowItWorks = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">How do we work ?</h1>
             <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-              quasi. In deleniti eaque aut repudiandae et a id nisi.
+            This website will connect donors with volunteers for these people, making it easy for users to donate clothes and bring warmth to those who need it most. Users will see the donation campaign and browse details after login and can donate via the form. 
+
             </p>
             <button className="btn btn-primary">Get Started</button>
           </div>

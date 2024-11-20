@@ -5,7 +5,8 @@ import CardItem from '../Components/CardItem';
 const DonationCampaigns = () => {
     const alldata = useLoaderData();
     return (
-        <div>
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="center-center">
            <div>
                 <h1 className='font-bold text-blue-950 text-3xl text-center my-5'>Our Campaigns</h1>
            </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeLayout from '../Pages/HomeLayout';
 import { createBrowserRouter } from 'react-router-dom';
-import Campaigns from '../Pages/Campaigns';
+
 import HowToHelp from '../Pages/HowToHelp';
 import Donation from '../Pages/Donation';
 import HomePage from '../Pages/HomePage';
@@ -18,10 +18,6 @@ const Route = createBrowserRouter([
       children:[{
         path:'/',
         element: <HomePage></HomePage>
-      },
-      {
-        path: "/campaigns",
-        element: <Campaigns></Campaigns>,
       },
       {
         path: "/howToHelp",

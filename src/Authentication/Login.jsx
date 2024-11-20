@@ -9,6 +9,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const handlelogin=e =>{  
+        setmsg('');
         e.preventDefault();
         const form = new FormData(e.target);
         const email = form.get('email');
@@ -25,6 +26,7 @@ const Login = () => {
             setmsg(err.message)
             // console.log(err.message)
         })
+        e.target.reset();
         
     }
     const handleLoginbtn=() =>{

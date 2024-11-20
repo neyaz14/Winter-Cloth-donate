@@ -8,29 +8,41 @@ const Register = () => {
     const [msg, setmsg] = useState();
     const navigate = useNavigate();
     const handleRegister = e => {
+
+        setmsg('');
         e.preventDefault();
         const form = new FormData(e.target);
         const email = form.get('email');
         const name = form.get('name');
         const password = form.get('password');
         const photoURL = form.get('photo');
-        singUP(email, password)
-            .then((res) => {
-                const user = res.user;
-                // console.log(user)
-                setCurrentUser(user);
-                updateUserProfile({ displayName: name, photoURL: photoURL })
-                    .then(() => {
-                        // console.log()
-                        navigate('/')
-                    })
-                    .catch(err => { setmsg(err.message) })
+        // for pw validation 
+        const pwREGX = /^(?=.*[a-z])(?=.*[A-Z])(?!.* ).{6,}$/
+        if (!pwREGX.test(password)) {
+            setmsg('Must have an Uppercase letter,a Lowercase letter and the Length must be at least 6 character');
+            return;
+        }
+        
+
+            singUP(email, password)
+                .then((res) => {
+                    const user = res.user;
+                    setCurrentUser(user);
+                    updateUserProfile({ displayName: name, photoURL: photoURL })
+                        .then(() => {
+                            // console.log()
+                            navigate('/')
+                        })
+                        .catch(err => { setmsg(err.message) })
 
 
-                e.target.reset();
-                // navigate('/login')    
-            })
-            .catch((err) => { setmsg(err.message) })
+                    e.target.reset();
+                    // navigate('/login')    
+                })
+                .catch((err) => { setmsg(err.message) })
+        
+
+
 
     }
     const handleRegisterbtn = () => {
@@ -84,9 +96,7 @@ const Register = () => {
                                 <input
                                     name='password'
                                     type="password" placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+
                             </div>
                             <div className="form-control mt-6">
                                 <button
