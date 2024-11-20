@@ -1,11 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/Provider';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'animate.css';
+// import ''
 
 const Login = () => {
     const [msg, setmsg] = useState();
-    const { Currentuser,loggedInUser , singIn} = useContext(AuthContext);
+// const [text, settext] = useState();
+    const emailRef = useRef();
+    const { Currentuser,loggedInUser ,forgetPassword, singIn} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handlelogin=e =>{  
@@ -18,23 +23,30 @@ const Login = () => {
         .then((res)=>{
             console.log('Successfully ', res.user)
             
-            // toast('User Successfully login') 
+       
             e.target.reset();
             navigate(location?.state ? location.state : "/")    
         })
         .catch((err)=>{
             setmsg(err.message)
-            // console.log(err.message)
+           
         })
         e.target.reset();
-        
     }
-    const handleLoginbtn=() =>{
-        
+
+    const handleForgetPW=() =>{
+        if(!emailRef.current.value){
+            toast('give a valid email')
+            return;
+        }
+        forgetPassword(emailRef.current.value)
+        .then(res=>{toast('msg sent')})
+        .catch(err=>{setmsg(err)})
     }
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
+            <ToastContainer  />
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -48,6 +60,7 @@ const Login = () => {
                                 </label>
                                 <input 
                                 name='email'
+                                ref={emailRef}
                                 type="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
@@ -58,12 +71,12 @@ const Login = () => {
                                 name='password'
                                 type="password" placeholder="password" className="input input-bordered" required />
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <a href="#" onClick={handleForgetPW} className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
                                 <button 
-                                onClick={handleLoginbtn}
+                                // onClick={handleLoginbtn}
                                 className="btn btn-primary">Login</button>
                             </div>
                             <div className='flex  justify-start'>
