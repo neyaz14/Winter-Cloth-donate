@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
-import { auth } from '../Firebase/firebase.init';
+import { auth, googleProvider } from '../Firebase/firebase.init';
 
 
 export const AuthContext = createContext(null)
@@ -28,6 +28,10 @@ const Provider = ({ children }) => {
     const singOutUser = () => {
         setloading(true);
         return signOut(auth);
+    }
+    const registerWithGoogle =()=>{
+        setloading(true);
+        return signInWithPopup(auth, googleProvider);
     }
     // if (loggedInUser !== null) {
     //     const displayName = loggedInUser.displayName;
@@ -57,7 +61,8 @@ const Provider = ({ children }) => {
 
     const authInfo = {
 
-        Currentuser, setCurrentUser, singIn, singUP, singOutUser, loading, loggedInUser, updateUserProfile,forgetPassword
+        Currentuser, setCurrentUser, singIn, singUP, singOutUser, loading, loggedInUser, updateUserProfile,forgetPassword,
+        registerWithGoogle
     }
 
     return (

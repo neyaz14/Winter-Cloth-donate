@@ -6,7 +6,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { Currentuser, setCurrentUser, singUP, updateUserProfile } = useContext(AuthContext);
+    const { Currentuser, setCurrentUser, singUP, updateUserProfile ,registerWithGoogle} = useContext(AuthContext);
     const [msg, setmsg] = useState();
     const [showpw, setshowpw] = useState(false);
     const navigate = useNavigate();
@@ -50,9 +50,14 @@ const Register = () => {
 
 
     }
-    const handleRegisterbtn = () => {
-
+    const handleRegisterGOOGLE = () => {
+        registerWithGoogle()
+        .then(res=>{setmsg(res.user)
+            navigate('/')
+        })
+        .catch(err=>{setmsg(err.message)})
     }
+    
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
@@ -61,9 +66,9 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Register Here</h1>
 
                     </div>
-                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
                         <form onSubmit={handleRegister} className="card-body">
-                            <div className="form-control">
+                            <div className="form-control my-1">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
@@ -73,9 +78,9 @@ const Register = () => {
                                     type="text" placeholder="Name" className="input input-bordered" required />
                             </div>
 
-                            <div className="form-control">
+                            <div className="form-control my-1">
                                 <label className="label">
-                                    <span className="label-text">Photo URL</span>
+                                    <span className="label-text mt-2">Photo URL</span>
                                 </label>
 
                                 {/* photo */}
@@ -94,12 +99,7 @@ const Register = () => {
                                     type="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control relative">
-                                {/* pw toggle */}
-                                <button
-                                    onClick={() => setshowpw(!showpw)}
-                                    className='btn btn-xs absolute right-2 top-12'>{
-                                        showpw ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
-                                    }</button>
+
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
@@ -108,13 +108,13 @@ const Register = () => {
                                     name='password'
                                     type={!showpw ? "password" : "text"}
                                     placeholder="password" className="input input-bordered" required />
-                                
+
 
                                 {/* --------------------------------------------------- */}
                             </div>
                             <div className="form-control mt-6">
                                 <button
-                                    onClick={handleRegisterbtn}
+                                    // onClick={handleRegisterbtn}
                                     className="btn btn-primary">Register</button>
                             </div>
                             <div className='flex  justify-start'>
@@ -124,6 +124,17 @@ const Register = () => {
                                 <p className='text-red-500 font-semibold text-sm'>{msg}</p>
                             </div>
                         </form>
+                        {/* pw toggle */}
+                        <button
+                            onClick={() => setshowpw(!showpw)}
+                            className='btn btn-xs absolute right-10 top-96'>{
+                                showpw ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                            }</button>
+                            <div className='mx-auto'>
+                                <button
+                                onClick={handleRegisterGOOGLE}
+                                className='btn btn-wide mb-6 bg-blue-200 text-blue-950 font-bold'> Register with Google </button>
+                            </div>
                     </div>
                 </div>
             </div>

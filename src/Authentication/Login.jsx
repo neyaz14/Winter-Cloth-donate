@@ -8,14 +8,15 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 // import ''
 
+
 const Login = () => {
     const [msg, setmsg] = useState();
 
     const [eemail, seteemail] = useState('');
-    
+
     const [showpw, setshowpw] = useState(false);
     const emailRef = useRef();
-    const { Currentuser, loggedInUser, forgetPassword, singIn } = useContext(AuthContext);
+    const { Currentuser,registerWithGoogle,  loggedInUser, forgetPassword, singIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handlelogin = e => {
@@ -38,20 +39,20 @@ const Login = () => {
     }
 
     const handleForgetPW = () => {
-        //     if(!emailRef.current.value){
-        //         toast('give a valid email')
-        //         return;
-        //     }
-        //     const email = emailRef.current.value;
-        //     console.log(email);
-        //     navigate('/forgetpw');
-        //    return email;
+      
         navigate('/forgetpw', { state: { eemail } });
     }
-   
+    const handleRegisterGOOGLE = () => {
+        registerWithGoogle()
+        .then(res=>{setmsg(res.user)
+            navigate('/')
+        })
+        .catch(err=>{setmsg(err.message)})
+    }
+
     return (
         <div>
-            <div className="hero bg-base-200 min-h-screen">
+            <div className="hero bg-base-200 min-h-screen " >
                 <ToastContainer />
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
@@ -75,7 +76,7 @@ const Login = () => {
                                     type="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control relative">
-                {/* pw toggle */}
+                                {/* pw toggle */}
                                 {/* <button 
                                 onClick={()=>setshowpw(!showpw)}
                                 className='btn btn-xs absolute right-2 top-12'>{
@@ -84,12 +85,12 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                {/* pw inout */}
+                                {/* pw inout */}
                                 <input
                                     name='password'
-                                    type={!showpw ? "password" :"text"} 
+                                    type={!showpw ? "password" : "text"}
                                     placeholder="password" className="input input-bordered" required />
-    {/* forget pw */}
+                                {/* forget pw */}
                                 <label className="label">
                                     <p onClick={handleForgetPW} className="label-text-alt link link-hover">Forgot password?</p>
                                 </label>
@@ -108,11 +109,16 @@ const Login = () => {
                                 <p className='text-red-500 font-semibold text-sm'>{msg}</p>
                             </div>
                         </form>
-                        <button 
-                                onClick={()=>setshowpw(!showpw)}
-                                className='btn btn-xs absolute right-10 top-44'>{
-                                    showpw ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
-                                }</button>
+                        <button
+                            onClick={() => setshowpw(!showpw)}
+                            className='btn btn-xs absolute right-10 top-44'>{
+                                showpw ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                            }</button>
+                        <div className='mx-auto'>
+                            <button
+                                onClick={handleRegisterGOOGLE}
+                                className='btn btn-wide mb-6 bg-blue-200 text-blue-950 font-bold'> Login with Google </button>
+                        </div>
                     </div>
                 </div>
             </div>
