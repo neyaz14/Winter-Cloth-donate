@@ -11,7 +11,8 @@ const Banner = () => {
    
     return (
         <>
-        <Swiper className="mySwiper">
+       <div className='-z-20 '>
+       <Swiper className="mySwiper">
         <SwiperSlide><img src={lebanon} alt="" /></SwiperSlide>
         <SwiperSlide><img src={yemen} alt="" /></SwiperSlide>
         {/* <SwiperSlide><img src={bng} alt="" /></SwiperSlide>
@@ -21,6 +22,7 @@ const Banner = () => {
         <SwiperSlide><img src={lebanon} alt="" /></SwiperSlide> */}
        
       </Swiper>
+       </div>
         
         </>
     );

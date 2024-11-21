@@ -1,0 +1,12 @@
+.card-item {
+    /* position: relative;
+    overflow: hidden;
+    border-radius: 10px; */
+    
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-item:hover {
+    transform: scale(1.05);
+    box-shadow: -4px -4px 24px 25px rgba(143, 166, 249, 0.636);
+  }

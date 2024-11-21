@@ -2,11 +2,16 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/Provider';
 import { toast } from 'react-toastify';
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const { Currentuser, setCurrentUser, singUP, updateUserProfile } = useContext(AuthContext);
     const [msg, setmsg] = useState();
+    const [showpw, setshowpw] = useState(false);
     const navigate = useNavigate();
+
+
     const handleRegister = e => {
 
         setmsg('');
@@ -22,25 +27,25 @@ const Register = () => {
             setmsg('Must have an Uppercase letter,a Lowercase letter and the Length must be at least 6 character');
             return;
         }
-        
-
-            singUP(email, password)
-                .then((res) => {
-                    const user = res.user;
-                    setCurrentUser(user);
-                    updateUserProfile({ displayName: name, photoURL: photoURL })
-                        .then(() => {
-                            // console.log()
-                            navigate('/')
-                        })
-                        .catch(err => { setmsg(err.message) })
 
 
-                    e.target.reset();
-                    // navigate('/login')    
-                })
-                .catch((err) => { setmsg(err.message) })
-        
+        singUP(email, password)
+            .then((res) => {
+                const user = res.user;
+                setCurrentUser(user);
+                updateUserProfile({ displayName: name, photoURL: photoURL })
+                    .then(() => {
+                        // console.log()
+                        navigate('/')
+                    })
+                    .catch(err => { setmsg(err.message) })
+
+
+                e.target.reset();
+                // navigate('/login')    
+            })
+            .catch((err) => { setmsg(err.message) })
+
 
 
 
@@ -88,15 +93,24 @@ const Register = () => {
                                     name='email'
                                     type="email" placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
+                                {/* pw toggle */}
+                                <button
+                                    onClick={() => setshowpw(!showpw)}
+                                    className='btn btn-xs absolute right-2 top-12'>{
+                                        showpw ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                    }</button>
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                {/* Password */}
+                                {/* pw inout */}
                                 <input
                                     name='password'
-                                    type="password" placeholder="password" className="input input-bordered" required />
+                                    type={!showpw ? "password" : "text"}
+                                    placeholder="password" className="input input-bordered" required />
+                                
 
+                                {/* --------------------------------------------------- */}
                             </div>
                             <div className="form-control mt-6">
                                 <button

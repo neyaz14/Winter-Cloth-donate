@@ -8,7 +8,7 @@ const DonationCampaigns = () => {
         <div data-aos="fade-up"
         data-aos-anchor-placement="center-center">
            <div>
-                <h1 className='font-bold text-blue-950 text-3xl text-center my-5'>Our Campaigns</h1>
+                <h1 className='font-bold text-blue-950 text-5xl text-center my-5'>Our Campaigns</h1>
            </div>
             <div className='grid grid-cols-2'>
 

@@ -50,9 +50,7 @@ const UpdateProfile = () => {
             </form>
 
 
-            <div>
-                <button></button>
-            </div>
+            
         </div>
     );
 };

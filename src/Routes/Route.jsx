@@ -11,6 +11,7 @@ import Register from '../Authentication/Register';
 import PrivateRoute from '../Private/PrivateRoute';
 import UpdateProfile from '../Private/UpdateProfile';
 import DonationDetails from '../Private/DonationDetails';
+import ForgetPW from '../Authentication/ForgetPW';
 const Route = createBrowserRouter([
     {
       path: "/",
@@ -40,6 +41,9 @@ const Route = createBrowserRouter([
       {
         path:'/login',
         element: <Login></Login>
+      },{
+        path: '/forgetpw',
+        element:<ForgetPW></ForgetPW>
       },{
         path:'/register',
         element: <Register></Register>
