@@ -16,7 +16,7 @@ const Gallery = () => {
     { id: 2, src: `${gallery1}`, alt: "Image 2" },
     { id: 3, src: `${gallery2}`, alt: "Image 3" },
     { id: 4, src: `${gallery3}`, alt: "Image 4" },
-    { id: 5, src:`${gallery4}`, alt: "Image 5" },
+    { id: 5, src: `${gallery4}`, alt: "Image 5" },
     { id: 6, src: `${gallery5}`, alt: "Image 6" },
     { id: 7, src: `${gallery7}`, alt: "Image 7" },
     { id: 8, src: `${gallery8}`, alt: "Image 8" },
@@ -24,12 +24,15 @@ const Gallery = () => {
 
   return (
     <>
-    <div>
-      <h1 className='font-bold text-5xl text-blue-950 text-center my-6'>Our Gallery</h1>
-    </div>
+      <script>
+        AOS.init();
+      </script>
+      <div>
+        <h1 className='font-bold text-5xl text-blue-950 text-center my-6'>Our Gallery</h1>
+      </div>
       <div className="gallery-container grid">
         {images.map((image) => (
-          <div className="gallery-item" key={image.id}>
+          <div  className="gallery-item" key={image.id}>
             <img src={image.src} alt={image.alt} className="gallery-image" />
           </div>
         ))}

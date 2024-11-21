@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCTr0SDd_VtEtZnMNJS2Hh7xnzhivavY6k",
-  authDomain: "winter-cloth-donate-1db2b.firebaseapp.com",
-  projectId: "winter-cloth-donate-1db2b",
-  storageBucket: "winter-cloth-donate-1db2b.firebasestorage.app",
-  messagingSenderId: "807160373450",
-  appId: "1:807160373450:web:116e916c556b9fb611d433"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_apiKey,
+  projectId: import.meta.env.VITE_apiKey,
+  storageBucket: import.meta.env.VITE_apiKey,
+  messagingSenderId: import.meta.env.VITE_apiKey,
+  appId: import.meta.env.VITE_apiKey
 };
 
 // Initialize Firebase
