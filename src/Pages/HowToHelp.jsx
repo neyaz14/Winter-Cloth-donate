@@ -23,7 +23,7 @@ const HowToHelp = () => {
 
                     <div className='my-5 rounded-xl p-7 bg-sky-50 text-left col-start-2 col-end-4'>
                         <h1 className='text-blue-950 text-2xl font-semibold '>Spread Awareness </h1>
-                        <p className='text-blue-950 font-medium opacity-60'>It's not important that you have to one of us or donate in our campaings to help the poor. You can spread awareness in the socity , encourage people to help the poor </p>
+                        <p className='text-blue-950 font-medium opacity-60'>It's not important that you have to one of us or donate in our campaings to help the poor.You can spread awareness in the socity , encourage people to help the poor </p>
                     </div>
                 </div>
 
