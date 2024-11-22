@@ -25,9 +25,9 @@ const Dashboard = () => {
 
             </div>
             <div className='flex justify-between px-10 mx-auto mt-6'>
-                <button className='btn btn-outline'><Link to='/updateprofile'>Update Profile</Link></button>
+                <button className='btn hover:text-blue-50 hover:bg-blue-950'><Link to='/updateprofile'>Update Profile</Link></button>
                 
-                    <button onClick={handlesingOut}  className="btn btn-outline">SingOut</button>
+                    <button onClick={handlesingOut}  className="btn hover:text-blue-50 hover:bg-blue-950">SingOut</button>
                 
             </div>
         </div>

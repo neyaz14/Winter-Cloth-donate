@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import lebanon from '../assets/lebanon.jpg'
 import yemen from '../assets/yemen.jpg'
 import bng from '../assets/bng.jpg'
 import doante from '../assets/donate.jpg'
-
+import slider1 from '../assets/slider1.jpg'
+import slider2 from '../assets/slider2.jpg'
+// import slider3 from '../assets/slider3.jpg'
+// import slider4 from '../assets/slider4.jpg'
+import Aos from 'aos';
+import "aos/dist/aos.css"
 
 const Banner = () => {
+    useEffect(() => {
+        Aos.init({duration:1200});
+    }, [])
    
     return (
         <>
-       <div className='-z-20 '>
+       <div className='-z-20 ' data-aos="fade-down">
        <Swiper className="mySwiper">
-        <SwiperSlide><img src={lebanon} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={yemen} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={slider1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={slider2} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={slider1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={slider2} alt="" /></SwiperSlide>
+        {/* <SwiperSlide><img src={slider3} alt="" /></SwiperSlide> */}
+        {/* <SwiperSlide><img src={slider4} alt="" /></SwiperSlide> */}
         {/* <SwiperSlide><img src={bng} alt="" /></SwiperSlide>
         <SwiperSlide><img src={doante} alt="" /></SwiperSlide> */}
         {/* <SwiperSlide><img src={lebanon} alt="" /></SwiperSlide>

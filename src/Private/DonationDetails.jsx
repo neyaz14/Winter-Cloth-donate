@@ -25,7 +25,7 @@ const DonationDetails = () => {
     }
     return (
         <div>
-            <h1 className='animate__animated animate__pulse font-bold text-blue-950 text-4xl text-center my-5'>Details About Campaigns</h1>
+            <h1 className='animate__animated animate__pulse font-bold text-blue-950 text-5xl text-center my-5'>Details About Campaigns</h1>
             {/*  */}
 
             <div className='bg-blue-50 p-5 md:p-10 rounded-2xl '>
@@ -34,7 +34,8 @@ const DonationDetails = () => {
                 </figure>
                 <div className='text-center'>
                     <p className='text-3xl text-blue-900 font-bold'>{title}</p>
-                    <p className=' text-blue-900 opacity-75'>{description}</p>
+                    <img className='w-1/2 mx-auto rounded-2xl my-3' src={image} alt="" />
+                    <p className=' text-blue-900 font-bold opacity-75'>{description}</p>
                     <p className=' font-semibold text-blue-900'>{status}</p>
                     <p className=' text-blue-900 opacity-80'>Contact Info : {contactInfo}</p>
                     <p>Division : {division} </p>
@@ -42,7 +43,7 @@ const DonationDetails = () => {
             </div>
 
             <div className='mt-5 w-8/12 mx-auto'>
-                <h1 className='text-blue-800 font-semibold text-2xl text-center'>Fill up the form to donate </h1>
+                <h1 className='text-blue-900 font-bold text-3xl text-center'>Fill up the form to donate </h1>
                 <form onSubmit={handleDonateForm} className="card-body">
                     {/* Quantity of items */}
                     <div className="form-control">

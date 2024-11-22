@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import Aos from 'aos';
+import "aos/dist/aos.css"
 const About = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1200 });
+  }, [])
   return (
     <div data-aos="fade-up"
-    data-aos-anchor-placement="center-center" className="hero bg-base-200 h-[480px]">
+      data-aos-anchor-placement="center-center" className="hero bg-base-200 h-[480px]">
       <div className="hero-content text-center">
         <div className="">
           <h1 className="text-5xl font-bold">About Us </h1>
@@ -14,7 +18,7 @@ const About = () => {
             This website will connect donors with volunteers for these people, making it easy for users to donate clothes and bring warmth to those who need it most. Users will see the donation campaign and browse details after login and can donate via the form.
 
           </p>
-          <Link to="/donation"><button className="btn btn-primary">Donate Now</button></Link>
+          <Link to="/donation"><button className="btn bg-blue-200 text-blue-950 font-bold">Donate Now</button></Link>
         </div>
       </div>
     </div>

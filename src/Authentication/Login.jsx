@@ -45,7 +45,7 @@ const Login = () => {
     const handleRegisterGOOGLE = () => {
         registerWithGoogle()
         .then(res=>{setmsg(res.user)
-            navigate('/')
+            navigate(location?.state ? location.state : "/")
         })
         .catch(err=>{setmsg(err.message)})
     }

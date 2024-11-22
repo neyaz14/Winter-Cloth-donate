@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 import "./Gallery.css"; // Import the CSS file for styling
 import gallery1 from '../assets/gallery1.jpg';
@@ -21,16 +23,17 @@ const Gallery = () => {
     { id: 7, src: `${gallery7}`, alt: "Image 7" },
     { id: 8, src: `${gallery8}`, alt: "Image 8" },
   ];
+  useEffect(() => {
+    Aos.init({duration:1200});
+}, [])
 
   return (
     <>
-      <script>
-        AOS.init();
-      </script>
-      <div>
+      
+      <div data-aos="flip-right">
         <h1 className='font-bold text-5xl text-blue-950 text-center my-6'>Our Gallery</h1>
       </div>
-      <div className="gallery-container grid">
+      <div className="gallery-container grid" data-aos="zoom-in">
         {images.map((image) => (
           <div  className="gallery-item" key={image.id}>
             <img src={image.src} alt={image.alt} className="gallery-image" />

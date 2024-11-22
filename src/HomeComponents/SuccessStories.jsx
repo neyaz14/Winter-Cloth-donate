@@ -4,6 +4,7 @@ import winterPIC2 from '../assets/winter_clothing_gallery_6.jpg';
 import winterPIC3 from '../assets/winter_clothing_gallery_2.jpg';
 import './SuccessStore.css';
 import 'animate.css';
+
 const SuccessStories = () => {
     return (
         <div>

@@ -34,7 +34,7 @@ const ForgetPW = () => {
             toast('give a valid email')
             return;
         }
-        window.location.href = 'https://mail.google.com/';
+        window.open('https://mail.google.com/')
     }
     return (
         <div>
@@ -42,7 +42,7 @@ const ForgetPW = () => {
             <div>
                 <p className='font-semibold text-2xl text-center'>Forget Your Password ? </p>
             </div>
-            <form onSubmit={handleforgetpw} className="card-body">
+            <form onSubmit={handleforgetpw} className="card-body mx-auto  md:w-[500px]">
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -61,7 +61,7 @@ const ForgetPW = () => {
 
 
                 <div className='mx-auto'>
-                    <button onClick={handleResetPW} className='btn btn-outline btn-wide'>Reset Password</button>
+                    <button onClick={handleResetPW} className='btn btn-outline w-full'>Reset Password</button>
                 </div>
 
             </form>

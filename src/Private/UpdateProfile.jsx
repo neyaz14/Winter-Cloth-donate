@@ -44,7 +44,7 @@ const UpdateProfile = () => {
                         type="text" placeholder="Photo URL" className="input input-bordered" required />
                 </div>
                 <div className='mx-auto'>
-                    <button className='btn btn-outline btn-wide'>Update Info</button>
+                    <button className='btn hover:text-blue-50 hover:bg-blue-950 btn-wide'>Update Info</button>
                 </div>
 
             </form>

@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.active{
+    color: #08182d;
+    background-color: #8598d6c4;
+    font-weight: 500;
+
+}

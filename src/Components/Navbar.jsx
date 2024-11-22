@@ -2,7 +2,13 @@ import React, { useContext } from 'react';
 import { Link, Navigate, NavLink } from 'react-router-dom';
 import { FaHandsHelping } from "react-icons/fa";
 import { AuthContext } from '../Provider/Provider';
+// import './index.css'
 const Navbar = () => {
+    const active= {
+      color: "#eff6ff",
+    backgroundColor:" #172554",
+    fontWeight:"800"
+    }
     const { Currentuser, loggedInUser, singOutUser } = useContext(AuthContext);
     const Links = <>
         <li><NavLink to='/'>Home</NavLink></li>
