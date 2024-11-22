@@ -27,7 +27,7 @@ const Login = () => {
         const password = form.get('password');
         singIn(email, password)
             .then((res) => {
-                console.log('Successfully ', res.user)
+                // console.log('Successfully ', res.user)
                 e.target.reset();
                 navigate(location?.state ? location.state : "/")
             })
@@ -71,7 +71,7 @@ const Login = () => {
                                     value={eemail}
                                     onChange={(e) => {
                                         seteemail(e.target.value)
-                                        console.log(e.target.value)
+                                        // console.log(e.target.value)
                                     }}
                                     type="email" placeholder="email" className="input input-bordered" required />
                             </div>

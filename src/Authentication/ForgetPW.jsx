@@ -54,7 +54,7 @@ const ForgetPW = () => {
                         type="email"
                         value={eemail}
                         onChange={(e) => {seteemail(e.target.value)
-                            console.log(e.target.value)
+                            // console.log(e.target.value)
                         }}
                         placeholder="email" className="input input-bordered" required />
                 </div>

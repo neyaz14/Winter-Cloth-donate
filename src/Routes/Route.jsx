@@ -12,10 +12,12 @@ import PrivateRoute from '../Private/PrivateRoute';
 import UpdateProfile from '../Private/UpdateProfile';
 import DonationDetails from '../Private/DonationDetails';
 import ForgetPW from '../Authentication/ForgetPW';
+import Error from '../Pages/Error';
 const Route = createBrowserRouter([
     {
       path: "/",
       element: <HomeLayout></HomeLayout>,
+      errorElement:<Error></Error>,
       children:[{
         path:'/',
         element: <HomePage></HomePage>

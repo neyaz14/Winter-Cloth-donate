@@ -10,10 +10,10 @@ const DonationDetails = () => {
     const { campid } = useParams();
     const idnum = parseInt(campid);
 
-    console.log(idnum)
-    console.log(data)
+    // console.log(idnum)
+    // console.log(data)
     const campaign = data.find(campaign => campaign.id == campid)
-    console.log(campaign)
+    // console.log(campaign)
 
     const { id, title, image, description, status, contactInfo, division } = campaign;
 
